@@ -1,12 +1,10 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  font-weight: 400;
-  font-family: sans-serif
-
+	min-height: 100vh;
+	display: flex;
+	font-weight: 400;
+	font-family: "lato", sans-serif !important;
 }
-

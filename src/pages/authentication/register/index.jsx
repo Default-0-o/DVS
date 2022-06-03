@@ -1,40 +1,75 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import Input from "../../../components/form/input";
 
 const Register = () => {
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		axios
+			.post("", {
+				firstName,
+				lastName,
+				email,
+				password,
+			})
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
 	return (
 		<form>
-			<h3 className="mb-10">Register</h3>
+			<h3 className="mb-14">Register</h3>
 
-			<div className="form-group mb-5	">
-				<label className="fw-bolder">First name</label>
-				<input type="text" className="form-control" placeholder="First name" />
-			</div>
-
-			<div className="form-group mb-5	">
-				<label className="fw-bolder">Last name</label>
-				<input type="text" className="form-control" placeholder="Last name" />
-			</div>
-
-			<div className="form-group mb-5	">
-				<label className="fw-bolder">Email</label>
-				<input
-					type="email"
-					className="form-control"
-					placeholder="Enter email"
-				/>
-			</div>
-
-			<div className="form-group mb-7	">
-				<label className="fw-bolder">Password</label>
-				<input
-					type="password"
-					className="form-control"
-					placeholder="Enter password"
-				/>
-			</div>
-
-			<button type="submit" className="btn btn-dark btn-lg btn-block mb-5">
+			<Input
+				name="firstName"
+				type="text"
+				value={firstName}
+				onChange={(e) => setFirstName(e.target.value)}
+				placeholder="Enter first name"
+				required
+				label="First name"
+			/>
+			<Input
+				name="lastName"
+				type="text"
+				value={lastName}
+				onChange={(e) => setLastName(e.target.value)}
+				placeholder="Enter last name"
+				required
+				label="Last name"
+			/>
+			<Input
+				name="email"
+				type="email"
+				value={email}
+				onChange={(e) => setEmail(e.target.value)}
+				placeholder="Enter email"
+				required
+				label="Email"
+			/>
+			<Input
+				name="password"
+				type="password"
+				value={password}
+				onChange={(e) => setPassword(e.target.value)}
+				placeholder="Enter password"
+				required
+				label="Password"
+			/>
+			<button
+				type="submit"
+				onClick={(e) => handleSubmit(e)}
+				className="btn btn-dark btn-lg btn-block mb-5">
 				Register
 			</button>
 			<p className="text-center mb-0">
