@@ -1,0 +1,69 @@
+.custom-table {
+	background: #e1f0fc;
+	padding: 25px;
+	border-radius: 12px;
+	text-align: center;
+	width: 85%;
+	margin: auto;
+}
+
+.custom-table-row {
+	background: #ffffff;
+	display: grid;
+	grid-template-columns: 1fr 3fr 2fr 5fr 5fr 2fr 2fr 2fr 2fr 3fr 4fr 4fr 4fr;
+	padding: 15px 10px;
+	box-shadow: 0px 3px 2px 0px #9999992c;
+	transform: scale(1);
+	transition: all 0.3s ease-in-out;
+	border-radius: 5px;
+	margin: 5px 0;
+}
+
+.custom-table-row:hover {
+	transform: scale(1.01);
+	box-shadow: 0px 3px 2px 0px #83838333;
+}
+
+.custom-table-header .custom-table-row {
+	box-shadow: none;
+	transform: none;
+	background: #009ef7;
+	border-radius: 8px 8px 3px 3px;
+	padding: 25px 10px;
+}
+
+.custom-table-header-cell,
+.custom-table-row-cell {
+	padding: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.custom-table-header-cell {
+	font-size: 17px;
+	font-weight: 800;
+	color: rgb(255, 255, 255);
+}
+
+.custom-table-row-cell {
+	font-size: 14px;
+	font-weight: bold;
+	color: rgb(59, 59, 59);
+}
+
+.custom-table-row-cell:first-child {
+	color: rgb(0, 21, 206);
+}
+
+.custom-pagination-select {
+	padding: 5px;
+	border: none;
+	border-radius: 5px;
+	width: 60px;
+}
+
+.custom-pagination-select:focus-visible {
+	border: none;
+	outline: none;
+}

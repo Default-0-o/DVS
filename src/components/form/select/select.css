@@ -1,0 +1,32 @@
+.custom-select {
+	position: relative;
+}
+.custom-select-options {
+	position: absolute;
+	width: 100%;
+	top: 100%;
+	left: 0;
+	background: #ffffff;
+	border-radius: 5px;
+	border: 1px solid #cccccc;
+	box-shadow: 0px 3px 2px 0px #9999992c;
+	z-index: 1;
+	padding: 0px;
+	/* display: none; */
+}
+
+.custom-select-options ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.custom-select-options ul li {
+	width: 100%;
+	padding: 5px;
+}
+
+.custom-select-options ul li:hover {
+	background: #009ef7;
+	color: #fff;
+}
