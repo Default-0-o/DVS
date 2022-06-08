@@ -1,24 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { Context } from "../../../context/context";
 import Input from "../../../components/form/input";
+import { instance as axios } from "../../../config";
+import { toast } from "react-toastify";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const { setAccessToken } = useContext(Context);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		axios
-			.post("", {
+			.post("login", {
 				email,
 				password,
 			})
 			.then((res) => {
-				console.log(res);
+				localStorage.setItem("accessToken", res.data.access_token);
+				setAccessToken(res.data.access_token);
+				toast.success("Login Successful");
 			})
 			.catch((err) => {
 				console.log(err);
+				toast.error("Email or Password is incorrect!");
 			});
 	};
 
