@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import Routes from "./pages/routes";
 import { Context } from "./context/context";
 import { ToastContainer } from "react-toastify";
@@ -8,15 +8,26 @@ import "./assets/css/customBootstrapRtl.css";
 import "./App.css";
 
 function App() {
-	const [accessToken, setAccessToken] = useState(
-		localStorage.getItem("accessToken")
+	const [user, dispatcher] = useReducer(
+		(state, update) => {
+			console.log(state);
+			console.log(update);
+
+			return {
+				...state,
+				...update,
+			};
+		},
+		{
+			credentials: {},
+			token: "",
+		}
 	);
 
 	return (
 		<>
 			<ToastContainer />
-			<Context.Provider
-				value={{ accessToken: accessToken, setAccessToken: setAccessToken }}>
+			<Context.Provider value={{ user, dispatcher }}>
 				<div className="App">
 					<Routes />
 				</div>

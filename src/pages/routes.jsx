@@ -8,7 +8,7 @@ import Logout from "./authentication/logout";
 import { Context } from "../context/context";
 
 const AppRoutes = () => {
-	const context = useContext(Context);
+	const { user } = useContext(Context);
 
 	let routes = (
 		<Authentication>
@@ -20,7 +20,7 @@ const AppRoutes = () => {
 		</Authentication>
 	);
 
-	if (context.accessToken) {
+	if (user.token) {
 		routes = (
 			<Routes>
 				<Route path="/logout" element={<Logout />} />

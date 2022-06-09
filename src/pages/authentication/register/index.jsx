@@ -1,28 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Input from "../../../components/form/input";
+import { instance as axios } from "../../../config";
+import { toast } from "react-toastify";
+import { Context } from "../../../context/context";
 
 const Register = () => {
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
+	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [passwordConfirmation, setPasswordConfirmation] = useState("");
+	const [loading, setLoading] = useState(false);
+	const { dispatcher } = useContext(Context);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (password !== passwordConfirmation) {
+			toast.error("Password confirmation is not correct !");
+			return;
+		}
+		setLoading(true);
 		axios
-			.post("", {
-				firstName,
-				lastName,
+			.post("register", {
+				name,
 				email,
 				password,
 			})
 			.then((res) => {
-				console.log(res);
+				localStorage.setItem("accessToken", res.data.access_token);
+				dispatcher({
+					token: res.data.access_token,
+					credentials: { email },
+				});
+				toast.success("Register Successful");
+				setLoading(false);
 			})
 			.catch((err) => {
 				console.log(err);
+				toast.error("Email or Password is incorrect!");
+				setLoading(false);
+			})
+			.finally(() => {
+				setLoading(false);
 			});
 	};
 
@@ -31,22 +50,13 @@ const Register = () => {
 			<h3 className="mb-14">Register</h3>
 
 			<Input
-				name="firstName"
+				name="Name"
 				type="text"
-				value={firstName}
-				onChange={(e) => setFirstName(e.target.value)}
-				placeholder="Enter first name"
+				value={name}
+				onChange={(e) => setName(e.target.value)}
+				placeholder="Enter your Name"
 				required
-				label="First name"
-			/>
-			<Input
-				name="lastName"
-				type="text"
-				value={lastName}
-				onChange={(e) => setLastName(e.target.value)}
-				placeholder="Enter last name"
-				required
-				label="Last name"
+				label="Name"
 			/>
 			<Input
 				name="email"
@@ -66,11 +76,20 @@ const Register = () => {
 				required
 				label="Password"
 			/>
+			<Input
+				name="confirmpassword"
+				type="password"
+				value={passwordConfirmation}
+				onChange={(e) => setPasswordConfirmation(e.target.value)}
+				placeholder="Enter password again"
+				required
+				label="Password Confirmation"
+			/>
 			<button
 				type="submit"
 				onClick={(e) => handleSubmit(e)}
 				className="btn btn-dark btn-lg btn-block mb-5">
-				Register
+				{loading ? <span className="spinner-border"></span> : "Register"}
 			</button>
 			<p className="text-center mb-0">
 				<Link to="/login">Already have an account ?</Link>

@@ -8,10 +8,12 @@ import { toast } from "react-toastify";
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const { setAccessToken } = useContext(Context);
+	const { dispatcher } = useContext(Context);
+	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		setLoading(true);
 		axios
 			.post("login", {
 				email,
@@ -19,12 +21,20 @@ const Login = () => {
 			})
 			.then((res) => {
 				localStorage.setItem("accessToken", res.data.access_token);
-				setAccessToken(res.data.access_token);
+				dispatcher({
+					token: res.data.access_token,
+					credentials: { email },
+				});
 				toast.success("Login Successful");
+				setLoading(false);
 			})
 			.catch((err) => {
 				console.log(err);
 				toast.error("Email or Password is incorrect!");
+				setLoading(false);
+			})
+			.finally(() => {
+				setLoading(false);
 			});
 	};
 
@@ -66,7 +76,7 @@ const Login = () => {
 				type="submit"
 				onClick={(e) => handleSubmit(e)}
 				className="btn btn-dark btn-lg btn-block mb-5	">
-				Sign in
+				{loading ? <span className="spinner-border"></span> : "Sign in"}
 			</button>
 			<p className="text-center m-0">
 				<Link to="/register">Don't have an account ?</Link>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Context } from "../../context/context";
 
-const navBar = () => {
+const NavBar = () => {
+	const { user } = useContext(Context);
 	return (
 		<>
 			<nav className="navbar navbar-expand-sm navbar-dark bg-primary position-fixed w-100 z-index-1">
@@ -44,9 +46,15 @@ const navBar = () => {
 						</li>
 					</ul>
 				</div>
+				<div className="row justify-content-between align-items-center">
+					<h3 className="m-0	text-white">{user.credentials.email}</h3>
+					<Link to="/logout" className="text-white fs-4 fw-bolder ms-12">
+						Logout
+					</Link>
+				</div>
 			</nav>
 		</>
 	);
 };
 
-export default navBar;
+export default NavBar;
