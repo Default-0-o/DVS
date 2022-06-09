@@ -12,7 +12,7 @@ const Bubble = ({ size, delay, position }) => {
 				left: position.left,
 				right: position.right,
 				bottom: position.bottom,
-				animation: "bubble 10s " + delay + "s ease-in-out infinite",
+				animation: "bubble 8s " + delay + "s ease-in-out infinite",
 			}}></div>
 	);
 };
