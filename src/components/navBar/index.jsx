@@ -12,35 +12,35 @@ const NavBar = () => {
 						<li className="nav-item active">
 							<NavLink
 								className="nav-link fw-bolder-700 fs-4"
-								to="/records/transactions">
+								to="/records/transaction">
 								Transactions
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink
 								className="nav-link fw-bolder-700 fs-4"
-								to="/records/customers">
+								to="/records/user">
 								Customers
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink
 								className="nav-link fw-bolder-700 fs-4"
-								to="/records/networks">
+								to="/records/network">
 								Networks
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink
 								className="nav-link fw-bolder-700 fs-4"
-								to="/records/addresses">
+								to="/records/address">
 								Addresses
 							</NavLink>
 						</li>
 						<li className="nav-item">
 							<NavLink
 								className="nav-link fw-bolder-700 fs-4"
-								to="/records/assets">
+								to="/records/asset">
 								Assets
 							</NavLink>
 						</li>

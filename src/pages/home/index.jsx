@@ -1,15 +1,17 @@
-import React from "react";
-import Table from "../../components/table";
-import NavBar from "../../components/navBar";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import NavBar from "../../components/navBar";
+import Table from "../../components/table";
+import { instance as axios } from "../../config";
 import "./home.css";
 
 const Home = () => {
 	const { pathname } = useLocation();
 
-	const [table, setTable] = React.useState(
+	const [tableName, setTableName] = React.useState(
 		pathname.slice(pathname.lastIndexOf("/") + 1)
 	);
+	const [tableBody, setTableBody] = React.useState([]);
 
 	const headers = [
 		"Id",
@@ -26,27 +28,27 @@ const Home = () => {
 		"Updated",
 		"Created",
 	];
-	const body = new Array(99).fill([
-		"1",
-		"John Doe",
-		"Bitcoin",
-		"1s2d3f4g5h6j7k8l9m0",
-		"0x1234567890123456789012345678901234567890",
-		"Deposit",
-		"Completed",
-		"158.00",
-		"0.00",
-		"6874dasd",
-		"2019-01-01T00:00:00.000Z",
-		"2019-01-01T00:00:00.000Z",
-		"2019-01-01T00:00:00.000Z",
-	]);
+
+	useEffect(() => {
+		setTableName(pathname.slice(pathname.lastIndexOf("/") + 1));
+	}, [pathname]);
+
+	useEffect(() => {
+		axios
+			.get(tableName + "Data")
+			.then((res) => {
+				setTableBody(res.data.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, [tableName]);
 
 	return (
 		<div className="main">
 			<NavBar />
 			<div className="position-relative">
-				<Table headers={headers} body={body} tableTitle={"Transactions"} />
+				<Table headers={headers} body={tableBody} tableTitle={"Transactions"} />
 			</div>
 		</div>
 	);

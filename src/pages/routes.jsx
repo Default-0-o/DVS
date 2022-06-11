@@ -24,14 +24,14 @@ const AppRoutes = () => {
 		routes = (
 			<Routes>
 				<Route path="/logout" element={<Logout />} />
-				<Route path="/records/transactions" element={<Home />} />
-				<Route path="/records/customers" element={<Home />} />
-				<Route path="/records/networks" element={<Home />} />
-				<Route path="/records/addresses" element={<Home />} />
-				<Route path="/records/assets" element={<Home />} />
+				<Route path="/records/transaction" element={<Home />} />
+				<Route path="/records/user" element={<Home />} />
+				<Route path="/records/network" element={<Home />} />
+				<Route path="/records/address" element={<Home />} />
+				<Route path="/records/asset" element={<Home />} />
 				<Route
 					path="*"
-					element={<Navigate to="/records/transactions" replace />}
+					element={<Navigate to="/records/transaction" replace />}
 				/>
 			</Routes>
 		);

@@ -9,15 +9,10 @@ import "./App.css";
 
 function App() {
 	const [user, dispatcher] = useReducer(
-		(state, update) => {
-			console.log(state);
-			console.log(update);
-
-			return {
-				...state,
-				...update,
-			};
-		},
+		(state, update) => ({
+			...state,
+			...update,
+		}),
 		{
 			credentials: {},
 			token: "",
