@@ -18,25 +18,29 @@ class DbController extends Controller{
 
     public function assetData(Request $request){
         $asset = DB::table('assets')->get();
+        $query = "SELECT * FROM `assets` WHERE 1";
         return response()
-            ->json(['data' => $asset,]);
+            ->json(['data' => $asset, 'query' => $query,]);
     }
 
     public function addressData(Request $request){
         $address = DB::table('addresses')->get();
+        $query = "SELECT * FROM `addresses` WHERE 1";
         return response()
-            ->json(['data' => $address,]);
+            ->json(['data' => $address, 'query' => $query,]);
     }
 
     public function transactionData(Request $request){
         $transaction = DB::table('transactions')->get();
+        $query = "SELECT * FROM `transactions` WHERE 1";
         return response()
-            ->json(['data' => $transaction,]);
+            ->json(['data' => $transaction, 'query' => $query,]);
     }
 
     public function userData(Request $request){
         $user = DB::table('users')->select('id', 'name', 'email', 'created_at', 'updated_at')->get();
+        $query = "SELECT * FROM `users` WHERE 1";
         return response()
-            ->json(['data' => $user,]);
+            ->json(['data' => $user, 'query' => $query,]);
     }
 }
