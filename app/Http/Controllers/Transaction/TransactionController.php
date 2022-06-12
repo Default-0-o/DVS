@@ -10,7 +10,7 @@ class TransactionController extends Controller
 {
     //
     public function deposit(request $request){
-        $transaction = Transacton::create([
+        $transaction = Transaction::create([
             'address' => $request->address,
             'amount' => $request->amount,
             'asset' => $request->asset,
