@@ -35,7 +35,7 @@ class DbController extends Controller{
     }
 
     public function userData(Request $request){
-        $user = DB::table('users')->get(['id', 'name', 'email', 'created_at', 'updated_at']);
+        $user = DB::table('users')->select(['id', 'name', 'email', 'created_at', 'updated_at'])->get();
         return response()
             ->json(['data' => $user,]);
     }
