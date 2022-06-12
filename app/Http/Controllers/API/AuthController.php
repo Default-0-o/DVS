@@ -30,8 +30,11 @@ class AuthController extends Controller
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
+
+    $query = "INSERT INTO `users`(`id`, `name`, `email`, `email_verified_at`, `call_back_api_endpoint`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])";
+
         return response()
-            ->json(['data' => $user,'accessToken' => $token,]);
+            ->json(['data' => $user,'accessToken' => $token,'Query' => $query]);
     }
 
     public function login(Request $request)
