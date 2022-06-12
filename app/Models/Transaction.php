@@ -18,6 +18,6 @@ class Transaction extends Model
         'address',
         'amount',
         'asset',
-        'network'
+        'network',
     ];
 }
