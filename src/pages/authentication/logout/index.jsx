@@ -5,11 +5,11 @@ const Logout = () => {
 	const { dispatcher } = useContext(Context);
 
 	useEffect(() => {
+		localStorage.removeItem("accessToken");
 		dispatcher({
 			token: "",
 			credentials: {},
 		});
-		localStorage.removeItem("token");
 	}, []);
 
 	return <div></div>;

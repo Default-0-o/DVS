@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Context } from "../../context/context";
 
 const NavBar = () => {
-	const { user } = useContext(Context);
 	return (
 		<>
 			<nav className="navbar navbar-expand-sm navbar-dark bg-primary position-fixed w-100 z-index-1">
@@ -47,8 +45,14 @@ const NavBar = () => {
 					</ul>
 				</div>
 				<div className="row justify-content-between align-items-center">
-					<h3 className="m-0	text-white">{user.credentials.email}</h3>
-					<Link to="/logout" className="text-white fs-4 fw-bolder ms-12">
+					<Link
+						to="/deposit"
+						className="text-white-50 text-hover-white fs-4 fw-bolder ms-3">
+						Deposit
+					</Link>
+					<Link
+						to="/logout"
+						className="text-white-50 text-hover-white fs-4 fw-bolder ms-12">
 						Logout
 					</Link>
 				</div>

@@ -5,7 +5,7 @@ const Pagination = ({ page, onPageChange, size, onSizeChange, items }) => {
 	return (
 		<div className="row justify-content-end align-items-center">
 			<Select
-				defaultValue={size}
+				value={size}
 				onClick={(option) => {
 					onPageChange(1);
 					onSizeChange(option);

@@ -1,7 +1,7 @@
 .custom-form-input {
 	position: relative;
 }
-.custom-form-input > label {
+.custom-form-input > .animated-label {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -10,6 +10,14 @@
 	line-height: 1.5em;
 	transform: translate(0, -30px);
 	transition: all 0.5s ease;
+}
+
+.custom-form-input > .label {
+	position: relative;
+	font-weight: bold;
+	color: rgb(27, 27, 27);
+	font-size: 1.2em;
+	line-height: 1.5em;
 }
 
 .custom-form-input > input {
@@ -21,12 +29,12 @@
 	font-weight: 600;
 }
 
-.custom-form-input input:focus + label {
+.custom-form-input input:focus + .animated-label {
 	font-weight: bold;
 	color: rgb(27, 27, 27);
 	transform: translate(0, -60px);
 }
-.custom-form-input input[value]:not([value=""]) + label {
+.custom-form-input input[value]:not([value=""]) + .animated-label {
 	font-weight: bold;
 	color: rgb(27, 27, 27);
 	transform: translate(0, -60px);

@@ -6,6 +6,7 @@ import Login from "./authentication/login";
 import Register from "./authentication/register";
 import Logout from "./authentication/logout";
 import { Context } from "../context/context";
+import Deposit from "./deposit";
 
 const AppRoutes = () => {
 	const { user } = useContext(Context);
@@ -20,10 +21,11 @@ const AppRoutes = () => {
 		</Authentication>
 	);
 
-	if (user.token) {
+	if (user.token || localStorage.getItem("accessToken")) {
 		routes = (
 			<Routes>
 				<Route path="/logout" element={<Logout />} />
+				<Route path="/deposit" element={<Deposit />} />
 				<Route path="/records/transaction" element={<Home />} />
 				<Route path="/records/user" element={<Home />} />
 				<Route path="/records/network" element={<Home />} />

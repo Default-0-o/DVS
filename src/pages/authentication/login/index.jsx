@@ -20,9 +20,9 @@ const Login = () => {
 				password,
 			})
 			.then((res) => {
-				localStorage.setItem("accessToken", res.data.access_token);
+				localStorage.setItem("accessToken", res.data.accessToken);
 				dispatcher({
-					token: res.data.access_token,
+					token: res.data.accessToken,
 					credentials: { email },
 				});
 				toast.success("Login Successful");

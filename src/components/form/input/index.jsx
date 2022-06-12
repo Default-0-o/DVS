@@ -10,10 +10,12 @@ const Input = ({
 	required,
 	className,
 	label,
+	animatedLabel,
 	...rest
 }) => {
 	return (
 		<div className="custom-form-input form-group mb-5">
+			{!animatedLabel && <label className="label">{label}</label>}
 			<input
 				name={name}
 				type={type}
@@ -24,7 +26,7 @@ const Input = ({
 				required={required}
 				{...rest}
 			/>
-			<label>{label}</label>
+			{animatedLabel && <label className="animated-label">{label}</label>}
 		</div>
 	);
 };
