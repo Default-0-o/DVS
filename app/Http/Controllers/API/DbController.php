@@ -11,8 +11,9 @@ class DbController extends Controller{
 
     public function networkData(Request $request){
         $network = DB::table('Networks')->get();
+        $query = "SELECT * FROM `Networks` WHERE 1";
         return response()
-            ->json(['data' => $network,]);
+            ->json(['data' => $network, 'query' => $query,]);
     }
 
     public function assetData(Request $request){
