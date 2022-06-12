@@ -44,3 +44,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     // API route for user table data
     Route::get('/userData', [App\Http\Controllers\API\DbController::class, 'userData']);
     
+    //API route for deposit transaction
+    Route::post('/deposit', [App\Http\Controllers\Transaction\TransactionController::class, 'deposit']);
