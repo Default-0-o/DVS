@@ -14,6 +14,7 @@ class TransactionController extends Controller
             'address' => $request->address,
             'amount' => $request->amount,
             'asset' => $request->asset,
+            'network' => $request->network,
         ]);
     }
 }
