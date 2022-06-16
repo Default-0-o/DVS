@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
-import NavBar from "../../components/navBar";
 import Table from "../../components/table";
 import { instance as axios } from "../../config";
 import "./home.css";
@@ -9,9 +8,7 @@ import "./home.css";
 const Home = () => {
 	const { pathname } = useLocation();
 
-	const [tableName, setTableName] = React.useState(
-		pathname.slice(pathname.lastIndexOf("/") + 1)
-	);
+	const [tableName, setTableName] = React.useState("");
 	const [tableBody, setTableBody] = React.useState([]);
 
 	const headers = {
@@ -67,29 +64,31 @@ const Home = () => {
 	}, [pathname]);
 
 	useEffect(() => {
-		axios
-			.get(tableName + "Data")
-			.then((res) => {
-				setTableBody(res.data.data);
-				toast.info("Used SQL command : \n" + res.data.query, {
-					autoClose: false,
+		tableName &&
+			axios
+				.get(tableName + "Data")
+				.then((res) => {
+					setTableBody(res.data.data);
+					toast.info("Used SQL command : \n" + res.data.query, {
+						autoClose: false,
+					});
+				})
+				.catch((err) => {
+					console.log(err);
 				});
-			})
-			.catch((err) => {
-				console.log(err);
-			});
 	}, [tableName]);
 
 	return (
-		<div className="main">
-			<NavBar />
-			<div className="position-relative">
+		<div className="home">
+			{tableName ? (
 				<Table
 					headers={headers[tableName]}
 					body={tableBody}
 					tableTitle={tableName.toUpperCase()}
 				/>
-			</div>
+			) : (
+				<span className="spinner-border"></span>
+			)}
 		</div>
 	);
 };

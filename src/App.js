@@ -19,23 +19,15 @@ function App() {
 		}
 	);
 
-	useEffect(() => {
-		console.log("soxom amira");
-	}, []);
-
 	return (
-		<Profiler
-			id="App"
-			onRender={(id, phase, actualDuration) => {
-				console.log(`${id} ${phase} ${actualDuration}`);
-			}}>
+		<>
 			<ToastContainer />
 			<Context.Provider value={{ user, dispatcher }}>
 				<div className="App">
 					<Routes />
 				</div>
 			</Context.Provider>
-		</Profiler>
+		</>
 	);
 }
 

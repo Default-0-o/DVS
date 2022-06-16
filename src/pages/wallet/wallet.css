@@ -1,0 +1,10 @@
+.assets-row {
+	padding: 10px 0;
+}
+
+.assets-card {
+	height: 294px;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
