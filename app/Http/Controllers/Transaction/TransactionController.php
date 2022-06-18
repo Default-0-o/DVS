@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
@@ -21,8 +22,10 @@ class TransactionController extends Controller
         $user_id = Auth::id();
         $amount = $request->amount;
         $asset = $request->asset;
-        $old_balance = DB::select("select balance from wallet where user_id='$user_id' AND asset='$asset",);
-        $balance = $old_balance + $amount;
+        $old_balance = DB::table('wallet')->select('balance')->where('user_id', $user_id)->where('asset', $asset)->get();
+        //select("select balance from wallet where user_id='$user_id' AND asset='$asset",);
+        var_dump($old_balance[0]);
+        $balance = intval($old_balance[0]) + $amount;
         $deposit = DB::update("update wallet set balance = '$balance' where user_id='$user_id' AND asset='$asset'",);
 
         return response()
