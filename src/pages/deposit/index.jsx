@@ -29,7 +29,7 @@ const Deposit = () => {
 			.post("deposit", {
 				asset: asset.abbv,
 				network: network.title,
-				amount: amount,
+				amount: parseFloat(amount),
 				address: address,
 			})
 			.then((res) => {

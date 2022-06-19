@@ -14,14 +14,15 @@
 	box-shadow: 0px 3px 2px 0px #9999992c;
 	transform: scale(1);
 	transition: all 0.3s ease-in-out;
-	grid-template-columns: repeat(13, 1fr);
 	border-radius: 5px;
 	margin: 5px 0;
+	position: relative;
 }
 
 .custom-table-row:hover {
 	transform: scale(1.01);
 	box-shadow: 0px 3px 2px 0px #83838333;
+	z-index: 1;
 }
 
 .custom-table-header .custom-table-row {
@@ -49,7 +50,7 @@
 .custom-table-row-cell {
 	font-size: 14px;
 	font-weight: bold;
-	color: rgb(59, 59, 59);
+	color: rgb(59, 59, 59) !important;
 }
 
 .custom-table-row-cell:first-child {

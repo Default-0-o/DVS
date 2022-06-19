@@ -1,15 +1,18 @@
 import React from "react";
+import Tooltip from "../../tooltip";
 
 const TableHeader = ({ titles }) => {
 	return (
 		<div
 			className="custom-table-row"
-			style={{ gridTemplateColumns: `repeat(${titles.length},1fr)` }}>
+			style={{ gridTemplateColumns: `50px repeat(${titles.length - 1},2fr)` }}>
 			{titles.map((title, index) => {
 				return (
-					<span className="custom-table-header-cell" key={index}>
-						{title}
-					</span>
+					<Tooltip content={title} placement="bottom">
+						<span className="custom-table-header-cell" key={index}>
+							{title}
+						</span>
+					</Tooltip>
 				);
 			})}
 		</div>

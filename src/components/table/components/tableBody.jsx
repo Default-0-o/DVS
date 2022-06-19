@@ -1,4 +1,5 @@
 import React from "react";
+import Tooltip from "../../tooltip";
 
 const TableBody = ({ items }) => {
 	return items.map((row, index) => {
@@ -7,12 +8,20 @@ const TableBody = ({ items }) => {
 				className="custom-table-row"
 				key={index}
 				style={{
-					gridTemplateColumns: `repeat(${Object.keys(row).length},1fr)`,
+					gridTemplateColumns: ` 50px repeat(${
+						Object.keys(row).length - 1
+					},2fr)`,
 				}}>
 				{Object.keys(row).map((cell, index) => {
-					return (
+					return row[cell] ? (
 						<span className="custom-table-row-cell" key={index}>
-							{row[cell]}
+							<Tooltip content={row[cell]} placement="bottom">
+								{row[cell] === null ? "-" : row[cell]}
+							</Tooltip>
+						</span>
+					) : (
+						<span className="custom-table-row-cell" key={index}>
+							{row[cell] === null ? "-" : row[cell]}
 						</span>
 					);
 				})}
