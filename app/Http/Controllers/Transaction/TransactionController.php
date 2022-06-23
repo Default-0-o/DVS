@@ -23,9 +23,11 @@ class TransactionController extends Controller
         $amount = $request->amount;
         $asset = $request->asset;
         $old_balance = DB::table('wallet')->select('balance')->where('user_id', $user_id)->where('asset', $asset)->get();
-        //select("select balance from wallet where user_id='$user_id' AND asset='$asset",);
-        echo $old_balance;
-        $balance = intval($old_balance) + $amount;
+        // select("select balance from wallet where user_id='$user_id' AND asset='$asset",);
+        // var_dump($user_id);
+        // var_dump($old_balance);
+
+        $balance = (int) $old_balance + $amount;
         $deposit = DB::update("update wallet set balance = '$balance' where user_id='$user_id' AND asset='$asset'",);
 
         return response()
