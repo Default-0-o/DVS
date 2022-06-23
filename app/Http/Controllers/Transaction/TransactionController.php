@@ -19,15 +19,15 @@ class TransactionController extends Controller
             'network' => $request->network,
         ]);
 
-        $user_id = Auth::id();
+        $user_id = Auth::user()->id;
         $amount = $request->amount;
         $asset = $request->asset;
-        $old_balance = DB::table('wallet')->select('balance')->where('user_id', $user_id)->where('asset', $asset)->get();
+        $old_balance = DB::table('wallet')->select('balance')->where('user_id', Auth::user()->id)->where('asset', $asset)->first();
         // select("select balance from wallet where user_id='$user_id' AND asset='$asset",);
         // var_dump($user_id);
-        // var_dump($old_balance);
-
-        $balance = (int) $old_balance + $amount;
+        // var_dump($old_balance->balance);
+        
+        $balance = $old_balance->balance + $request->amount;
         $deposit = DB::update("update wallet set balance = '$balance' where user_id='$user_id' AND asset='$asset'",);
 
         return response()
