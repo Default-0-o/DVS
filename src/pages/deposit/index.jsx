@@ -29,8 +29,8 @@ const Deposit = () => {
 				address: address,
 			})
 			.then((res) => {
-				console.log(res);
 				setLoading(false);
+				toast.success("Deposit was successful");
 			})
 			.catch((err) => {
 				console.log(err);

@@ -5,7 +5,7 @@ import { tokens } from "../../../constant/tokens";
 const AssetRow = ({ abbv, amount }) => {
 	return (
 		<div className="row justify-content-between align-items-center assets-row">
-			<SVG src={`/tokens/${abbv}.svg`} className="asset-icon" width="55" />
+			<SVG src={`./tokens/${abbv}.svg`} className="asset-icon" width="55" />
 			<span className="fs-5 fw-bold">{tokens[abbv].title}</span>
 			<span className="fs-5 fw-bold">{amount}</span>
 		</div>
