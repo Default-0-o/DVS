@@ -3,5 +3,5 @@ Database Project
 
 
 Amir Esmaeili
-Hamdreza Moradi
+Hamidreza Moradi
 Reza Hashemzadeh Farhang
