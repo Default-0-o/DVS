@@ -22,7 +22,6 @@ const Home = () => {
 			"Status",
 			"Assets",
 			"Amount",
-			"MetaData",
 			"Timestamp",
 			"Updated",
 			"Created",

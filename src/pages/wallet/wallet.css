@@ -3,7 +3,14 @@
 }
 
 .assets-card {
-	height: 294px;
+	height: 280px;
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.chart-card {
+	height: 280px;
 	width: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;

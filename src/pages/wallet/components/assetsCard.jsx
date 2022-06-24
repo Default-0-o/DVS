@@ -9,10 +9,9 @@ const AssetsCard = ({ assets }) => {
 				<div className="assets-card">
 					{assets.map((asset) => (
 						<AssetRow
-							key={asset.id}
-							name={asset.name}
-							abbv={asset.abbv}
-							amount={asset.amount}
+							key={asset.user_id}
+							abbv={asset.asset}
+							amount={asset.balance}
 						/>
 					))}
 				</div>

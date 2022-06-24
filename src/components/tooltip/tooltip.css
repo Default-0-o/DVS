@@ -1,6 +1,9 @@
 .custom-tooltip-wrapper {
 	position: relative;
 	display: inline-block;
+	padding: 10px 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .custom-tooltip-wrapper .custom-tooltip {
@@ -49,7 +52,7 @@
 }
 
 .custom-tooltip-wrapper .custom-tooltip.bottom {
-	top: 130%;
+	top: 100%;
 	left: 50%;
 }
 

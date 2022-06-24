@@ -18,10 +18,6 @@ const Deposit = () => {
 	const [assetDropdown, setAssetDropdown] = useState(false);
 	const [networkDropdown, setNetworkDropdown] = useState(false);
 
-	// useEffect(() => {
-	// 	setNetwork(asset.networks);
-	// }, [asset]);
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setLoading(true);

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import ApexCharts from "apexcharts";
 
-const ChartCard = () => {
+const ChartCard = ({ data }) => {
 	const options = {
-		series: [44, 55, 41, 17, 15],
+		series: data.map((asset) => asset.balance),
 		chart: {
 			width: 450,
 			type: "donut",
@@ -21,8 +21,26 @@ const ChartCard = () => {
 			type: "gradient",
 		},
 		legend: {
-			formatter: function (val, opts) {
-				return val + " - " + opts.w.globals.series[opts.seriesIndex];
+			formatter: (seriesName, opts) =>
+				opts.w.globals.labels.length > 0 &&
+				opts.w.globals.labels[opts.seriesIndex] +
+					" - " +
+					opts.w.globals.series[opts.seriesIndex],
+		},
+		xaxis: {
+			categories: data.map((asset) => asset.asset),
+		},
+		tooltip: {
+			enabled: data.length > 0 ? true : false,
+			y: {
+				formatter: function (val, opts) {
+					return opts.globals.labels[opts.dataPointIndex];
+				},
+				title: {
+					formatter: function () {
+						return null;
+					},
+				},
 			},
 		},
 		responsive: [
@@ -30,7 +48,18 @@ const ChartCard = () => {
 				breakpoint: 480,
 				options: {
 					chart: {
-						width: 200,
+						width: 350,
+					},
+					legend: {
+						position: "bottom",
+					},
+				},
+			},
+			{
+				breakpoint: 380,
+				options: {
+					chart: {
+						width: 250,
 					},
 					legend: {
 						position: "bottom",
@@ -52,7 +81,7 @@ const ChartCard = () => {
 		<div className="card">
 			<div className="card-body">
 				<h3 className="card-title text-end mb-8">Wallet</h3>
-				<div id="chart"></div>
+				<div id="chart" className="chart-card"></div>
 			</div>
 		</div>
 	);

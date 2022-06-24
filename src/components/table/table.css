@@ -30,7 +30,7 @@
 	transform: none;
 	background: #009ef7;
 	border-radius: 8px 8px 3px 3px;
-	padding: 25px 10px;
+	padding: 15px 10px;
 }
 
 .custom-table-header-cell,
@@ -42,6 +42,7 @@
 }
 
 .custom-table-header-cell {
+	position: relative;
 	font-size: 17px;
 	font-weight: 800;
 	color: rgb(255, 255, 255);

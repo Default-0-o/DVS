@@ -13,5 +13,5 @@
 
 .main > div:last-child.home {
 	height: calc(100% - 98px);
-	top: 98px;
+	top: 62px;
 }

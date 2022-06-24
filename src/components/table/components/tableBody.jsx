@@ -1,5 +1,4 @@
 import React from "react";
-import Tooltip from "../../tooltip";
 
 const TableBody = ({ items }) => {
 	return items.map((row, index) => {
@@ -12,12 +11,15 @@ const TableBody = ({ items }) => {
 						Object.keys(row).length - 1
 					},2fr)`,
 				}}>
+				{delete row.metadata}
 				{Object.keys(row).map((cell, index) => {
 					return row[cell] ? (
-						<span className="custom-table-row-cell" key={index}>
-							<Tooltip content={row[cell]} placement="bottom">
-								{row[cell] === null ? "-" : row[cell]}
-							</Tooltip>
+						<span
+							className="custom-table-row-cell"
+							data-bs-toggle="tooltip"
+							data-bs-placement="bottom"
+							title={row[cell]}>
+							{row[cell] === null ? "-" : row[cell]}
 						</span>
 					) : (
 						<span className="custom-table-row-cell" key={index}>

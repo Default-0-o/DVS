@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Pagination from "./components/pagination";
 import TableBody from "./components/tableBody";
 import TableHeader from "./components/tableHeader";
 import "./table.css";
 
 const Table = ({ headers, body, tableTitle }) => {
-	const [page, setPage] = React.useState(1);
-	const [size, setSize] = React.useState(10);
+	const [page, setPage] = useState(1);
+	const [size, setSize] = useState(10);
 
 	const start = (page - 1) * size;
 	const end = page * size;
 
 	const bodyPaginated = body.slice(start, end);
+
+	useEffect(() => {
+		setPage(1);
+		setSize(10);
+	}, [tableTitle, body]);
 
 	return (
 		<div className="custom-table ">
