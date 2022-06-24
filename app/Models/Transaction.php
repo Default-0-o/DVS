@@ -19,5 +19,9 @@ class Transaction extends Model
         'amount',
         'asset',
         'network',
+        'transaction_id',
+        'status',
+        'direction',
+        'user_id',
     ];
 }
