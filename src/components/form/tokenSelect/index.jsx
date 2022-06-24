@@ -37,7 +37,7 @@ const TokenSelect = ({
 									}}>
 									{icon && (
 										<Svg
-											src={`./tokens/${token}.svg`}
+											src={`/tokens/${token}.svg`}
 											width="30"
 											height="30"
 											className="me-2 ms-5"

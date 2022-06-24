@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { instance as axios } from "../../config";
 import DepositForm from "./components/depositForm";
+import { toast } from "react-toastify";
 import "./deposit.css";
 
 const Deposit = () => {
