@@ -45,7 +45,7 @@ class DbController extends Controller{
     }
     public function walletData(Request $request){
         $wallet = DB::table('wallet')->where('balance', '!=', 0)->get();
-        $query = "SELECT * FROM `wallet` WHERE 1";
+        $query = "SELECT * FROM `wallet` WHERE 'balance != 0'";
         return response()
             ->json(['data' => $wallet, 'query' => $query,]);
     }
