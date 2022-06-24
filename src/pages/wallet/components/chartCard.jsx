@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
-import ApexCharts from "apexcharts";
+import React, { useEffect, useState } from "react";
+import Chart from "react-apexcharts";
 
 const ChartCard = ({ data }) => {
+	console.log(data.map((asset) => parseFloat(asset.balance)));
+	console.log(data.map((asset) => asset.asset));
+
+	const [tokenSeries, setTokenSeries] = useState([]);
+	const [series, setSeries] = useState([]);
+
 	const options = {
-		series: data.map((asset) => asset.balance),
 		chart: {
-			width: 450,
-			type: "donut",
+			id: "don",
 		},
 		plotOptions: {
 			pie: {
@@ -26,9 +30,10 @@ const ChartCard = ({ data }) => {
 				opts.w.globals.labels[opts.seriesIndex] +
 					" - " +
 					opts.w.globals.series[opts.seriesIndex],
+			horizontalAlign: "left",
 		},
 		xaxis: {
-			categories: data.map((asset) => asset.asset),
+			categories: tokenSeries,
 		},
 		tooltip: {
 			enabled: data.length > 0 ? true : false,
@@ -70,18 +75,37 @@ const ChartCard = ({ data }) => {
 	};
 
 	useEffect(() => {
-		const chart = new ApexCharts(document.getElementById("chart"), options);
-		chart.render();
-		return () => {
-			chart.destroy();
-		};
-	}, []);
+		setSeries(data && data.map((asset) => parseFloat(asset.balance)));
+		setTokenSeries(data && data.map((asset) => asset.asset));
+	}, [data]);
+
+	let chart = (
+		<Chart
+			series={series.length > 0 ? series : [0.00000000001]}
+			options={options}
+			type="donut"
+			width="100%"
+			height="100%"
+		/>
+	);
+
+	useEffect(() => {
+		chart = (
+			<Chart
+				series={series.length > 0 ? series : [0.00000000001]}
+				options={options}
+				type="donut"
+				width="100%"
+				height="100%"
+			/>
+		);
+	}, [series, options]);
 
 	return (
 		<div className="card">
 			<div className="card-body">
-				<h3 className="card-title text-end mb-8">Wallet</h3>
-				<div id="chart" className="chart-card"></div>
+				<h3 className="card-title text-end mb-8 ">Wallet</h3>
+				<div className="chart-card">{chart}</div>
 			</div>
 		</div>
 	);

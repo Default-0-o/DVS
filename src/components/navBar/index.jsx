@@ -15,7 +15,7 @@ const NavBar = () => {
 									id="dropdownMenuButton1"
 									data-bs-toggle="dropdown"
 									aria-expanded="false">
-									Dropdown button
+									Tables
 								</button>
 								<ul
 									className="dropdown-menu"

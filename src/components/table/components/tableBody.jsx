@@ -16,6 +16,7 @@ const TableBody = ({ items }) => {
 					return row[cell] ? (
 						<span
 							className="custom-table-row-cell"
+							key={index}
 							data-bs-toggle="tooltip"
 							data-bs-placement="bottom"
 							title={row[cell]}>

@@ -7,13 +7,17 @@ const AssetsCard = ({ assets }) => {
 			<div className="card-body ">
 				<h3 className="card-title text-end mb-8">Assets</h3>
 				<div className="assets-card">
-					{assets.map((asset) => (
-						<AssetRow
-							key={asset.user_id}
-							abbv={asset.asset}
-							amount={asset.balance}
-						/>
-					))}
+					{assets.map((asset) => {
+						return (
+							asset.balance > 0 && (
+								<AssetRow
+									key={asset.id}
+									abbv={asset.asset}
+									amount={asset.balance}
+								/>
+							)
+						);
+					})}
 				</div>
 			</div>
 		</div>
