@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import AssetsCard from "./components/assetsCard";
 import ChartCard from "./components/chartCard";
 import { instance as axios } from "../../config";
+import { toast } from "react-toastify";
+
 import "./wallet.css";
 
 const Wallet = () => {
@@ -12,6 +14,9 @@ const Wallet = () => {
 			.get("/walletData")
 			.then((res) => {
 				setBalance(res.data.data);
+				toast.info("Used SQL command : \n" + res.data.query, {
+					autoClose: false,
+				});
 			})
 			.catch((err) => {
 				console.log(err);
