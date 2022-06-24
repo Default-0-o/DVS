@@ -11,7 +11,7 @@ const TableBody = ({ items }) => {
 						Object.keys(row).length - 1
 					},2fr)`,
 				}}>
-				{delete row.metadata}
+				{/* {delete row.metadata} */}
 				{Object.keys(row).map((cell, index) => {
 					return row[cell] ? (
 						<span
