@@ -17,6 +17,10 @@ class TransactionController extends Controller
             'amount' => $request->amount,
             'asset' => $request->asset,
             'network' => $request->network,
+            'status' => "completed",
+            'direction' => "deposit",
+            'customerid' => "1",
+            
         ]);
 
         // echo auth()->check();

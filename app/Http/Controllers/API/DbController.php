@@ -43,4 +43,10 @@ class DbController extends Controller{
         return response()
             ->json(['data' => $user, 'query' => $query,]);
     }
+    public function walletData(Request $request){
+        $wallet = DB::table('wallet')->get();
+        $query = "SELECT * FROM `wallet` WHERE 1";
+        return response()
+            ->json(['data' => $wallet, 'query' => $query,]);
+    }
 }
