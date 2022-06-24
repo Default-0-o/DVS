@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
+<circle style="fill:#FFFFFF;" cx="539" cy="539" r="539"/>
+<g>
+	<g>
+		<g>
+			<defs>
+				<rect id="SVGID_1_sushi" x="196.9" y="188" width="725.2" height="725.2"/>
+			</defs>
+			<clipPath id="SVGID_2_sushi">
+				<use xlink:href="#SVGID_1_sushi"  style="overflow:visible;"/>
+			</clipPath>
+			<g style="clip-path:url(#SVGID_2_sushi);">
+				
+					<linearGradient id="SVGID_3_sushi" gradientUnits="userSpaceOnUse" x1="470.1812" y1="809.0944" x2="581.6455" y2="426.34" gradientTransform="matrix(1 0 0 -1 -12 1012)">
+					<stop  offset="0" style="stop-color:#03B8FF"/>
+					<stop  offset="1" style="stop-color:#FA52A0"/>
+				</linearGradient>
+				<path style="fill:url(#SVGID_3_sushi);" d="M347.9,257.5L910,641.3L771,846.8L208.9,460L347.9,257.5z"/>
+				
+					<linearGradient id="SVGID_4_sushi" gradientUnits="userSpaceOnUse" x1="561.5103" y1="835.6941" x2="672.9774" y2="452.9379" gradientTransform="matrix(1 0 0 -1 -12 1012)">
+					<stop  offset="0" style="stop-color:#03B8FF"/>
+					<stop  offset="1" style="stop-color:#FA52A0"/>
+				</linearGradient>
+				<path style="fill:url(#SVGID_4_sushi);" d="M910,641.3c-48.3,69.5-211.5,42.3-365.6-66.5C387.2,469,302.6,327,347.9,257.5
+					c48.3-69.5,211.5-42.3,365.6,66.5C870.7,426.7,955.3,571.8,910,641.3z"/>
+				
+					<linearGradient id="SVGID_5_sushi" gradientUnits="userSpaceOnUse" x1="379.9716" y1="782.8265" x2="491.4388" y2="400.0684" gradientTransform="matrix(1 0 0 -1 -12 1012)">
+					<stop  offset="0" style="stop-color:#03B8FF"/>
+					<stop  offset="1" style="stop-color:#FA52A0"/>
+				</linearGradient>
+				<path style="fill:url(#SVGID_5_sushi);" d="M771,843.7c-48.3,69.5-211.5,42.3-365.6-66.5S163.6,529.5,212,456.9
+					c48.3-69.5,211.5-42.3,365.6,66.5S816.3,774.2,771,843.7z"/>
+				<path style="fill:#0E0F23;" d="M910,641.3L910,641.3L771,846.8l0,0c-48.3,69.5-211.5,39.3-365.6-66.5
+					c-30.2-21.2-57.4-42.3-84.6-66.5c21.2-3,48.3-15.1,75.5-45.3c48.3-51.4,72.5-63.5,93.7-60.4c21.2,0,45.3,21.2,84.6,72.5
+					c39.3,51.4,93.7,66.5,126.9,39.3c3-3,6-3,9.1-6c27.2-21.2,36.3-30.2,87.6-126.9c12.1-24.2,54.4-63.5,111.8-45.3
+					C925.1,580.8,925.1,614.1,910,641.3z"/>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" d="M888.9,629.2c-42.3,60.4-190.4,30.2-332.4-69.5
+					C411.4,460,326.8,333,369.1,272.6s190.4-30.2,332.4,69.5S928.1,568.8,888.9,629.2z M755.9,538.5
+					c-21.2,30.2-93.7,15.1-166.2-33.2c-69.5-48.3-111.8-111.8-90.7-142s93.7-15.1,166.2,33.2C734.7,444.9,777.1,508.3,755.9,538.5z"
+					/>
+				<path style="fill:#FFFFFF;" d="M335.9,327c0-3-3-6-6-3s-6,3-6,6c3,9.1,6,15.1,6,21.2c0,3,3,6,6,3c3,0,6-3,3-6
+					C338.9,342.1,338.9,336.1,335.9,327z"/>
+				<path style="fill:#FFFFFF;" d="M351,375.4c0-3-3-6-6-3s-3,3-3,6c33.2,75.5,102.7,157.1,193.4,217.6c3,3,6,0,9.1,0c3-3,0-6,0-9.1
+					C450.7,526.4,384.2,447.9,351,375.4z"/>
+				<path style="fill:#FFFFFF;" d="M716.6,671.5c-3,0-6,0-6,3s0,6,3,6c9.1,3,21.2,6,30.2,9.1c3,0,6,0,6-3s0-6-3-6
+					C737.8,677.5,725.7,674.5,716.6,671.5z"/>
+				<path style="fill:#FFFFFF;" d="M771,683.6c-3,0-6,3-6,6s3,6,6,6c24.2,3,51.4,6,72.5,3c3,0,6-3,6-6s-3-6-6-6
+					C819.4,689.6,795.2,686.6,771,683.6z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

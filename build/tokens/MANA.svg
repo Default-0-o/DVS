@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
+<g>
+	
+		<linearGradient id="SVGID_1_mana" gradientUnits="userSpaceOnUse" x1="3.3021" y1="1080.6071" x2="1.3929" y2="1078.6979" gradientTransform="matrix(400 0 0 -400 -399 432401)">
+		<stop  offset="0" style="stop-color:#FF2D55"/>
+		<stop  offset="1" style="stop-color:#FFBC5B"/>
+	</linearGradient>
+	<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_mana);" cx="540" cy="540" r="540"/>
+	
+		<linearGradient id="SVGID_2_mana" gradientUnits="userSpaceOnUse" x1="4.2691" y1="1079.5333" x2="4.2691" y2="1076.8334" gradientTransform="matrix(125 0 0 -150 17.7 162281)">
+		<stop  offset="0" style="stop-color:#A524B3"/>
+		<stop  offset="1" style="stop-color:#FF2D55"/>
+	</linearGradient>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_mana);" d="M382.6,351v405h337.5L382.6,351z"/>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" d="M45.1,756h337.5V351L45.1,756z"/>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FC9965;" d="M108,864c30.8,40.8,67.2,77.2,108,108h648
+		c40.8-30.8,77.2-67.2,108-108H108z"/>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FF2D55;" d="M216,972c90.2,67.8,202.5,108,324,108s233.8-40.2,324-108H216z
+		"/>
+	
+		<linearGradient id="SVGID_3_mana" gradientUnits="userSpaceOnUse" x1="7.313" y1="1077.7637" x2="7.313" y2="1075.0636" gradientTransform="matrix(91.7 0 0 -110 177.6 119121)">
+		<stop  offset="0" style="stop-color:#A524B3"/>
+		<stop  offset="1" style="stop-color:#FF2D55"/>
+	</linearGradient>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_3_mana);" d="M724.4,567v297H972L724.4,567z"/>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFBC5B;" d="M724.4,756H45.1c16.7,38.6,38.1,74.8,62.9,108h616.7V756H724.4
+		z"/>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" d="M477.1,864h247.3V567L477.1,864z"/>
+	<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFC95B;" cx="724.4" cy="351" r="135"/>
+	<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFC95B;" cx="382.6" cy="202.5" r="67.5"/>
+</g>
+</svg>
